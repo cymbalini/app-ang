@@ -5,7 +5,7 @@ import { ContactModel } from '../../models/contact-model';
 @Component({
   selector: 'app-contacts-list',
   templateUrl: './contacts-list.component.html',
-  styleUrl: './contacts-list.component.scss'
+  styleUrl: './contacts-list.component.scss',
 })
 export class ContactsListComponent {
   displayedColumns: string[] = ['lp', 'surname', 'firstname', 'city', 'phonenumber'];
