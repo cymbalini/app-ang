@@ -8,6 +8,7 @@ import { ContactModel } from '../../models/contact-model';
   styleUrl: './contacts-list.component.scss'
 })
 export class ContactsListComponent {
-  data: ContactModel[] = contactsData;
+  displayedColumns: string[] = ['lp', 'surname', 'firstname', 'city', 'phonenumber'];
+  dataSource: ContactModel[] = contactsData;
 
 }
