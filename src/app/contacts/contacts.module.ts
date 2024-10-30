@@ -8,6 +8,8 @@ import { AddContactComponent } from './add-contact/add-contact.component';
 import { RouterModule } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [
     ContactsListComponent,
@@ -20,8 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     RouterModule,
     MatInputModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    MatTooltipModule,
   ],
   exports: [
     ContactsListComponent

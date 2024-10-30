@@ -1,24 +1,44 @@
-<form >
-    <mat-form-field>
+<form [formGroup]="formModel">
+
+    <mat-form-field appearance="outline">
         <mat-label>nazwisko</mat-label>
-        <input matInput placeholder="nazwisko">
+        <input matInput  formControlName="surname">
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>imie</mat-label>
-        <input matInput placeholder="imie">
-    </mat-form-field>
-    <mat-form-field>
+        <input matInput  formControlName="name">
+    </mat-form-field >
+    
+    <mat-form-field appearance="outline">
         <mat-label>miasto</mat-label>
-        <input matInput placeholder="miaso">
+        <input matInput  formControlName="city">
     </mat-form-field>
-    <mat-form-field>
+    
+    <mat-form-field appearance="outline">
         <mat-label>numer telefonu</mat-label>
-        <input matInput placeholder="numer telefonu">
+        <input matInput  formControlName="phoneNumber">
     </mat-form-field>
-    <mat-form-field>
+    
+    <mat-form-field appearance="outline">
         <mat-label>mail</mat-label>
-        <input matInput placeholder="mail">
+        <input matInput formControlName="email">
     </mat-form-field>
 </form>
-<button [routerLink]="['']">wstecz</button>
+
+
+<button [routerLink]="['']" mat-fab matTooltip="Cofnij">
+    <mat-icon>arrow_back</mat-icon>
+</button>
+
+<button (click)="saveData()" mat-fab matTooltip="Zapisz" [disabled]="formModel.invalid">
+    <mat-icon>save</mat-icon>
+  </button>
+
+<!-- 
+<pre>
+    {{ formModel.invalid | json }}
+    {{ formModel.status | json }}
+    {{ formModel.value | json }}
+</pre> -->
+
