@@ -1,24 +1,36 @@
-<form >
-    <mat-form-field>
-        <mat-label>nazwisko</mat-label>
-        <input matInput placeholder="nazwisko">
+<form [formGroup]="formModel">
+    <mat-form-field appearance="outline">
+        <mat-label >nazwisko</mat-label>
+        <input matInput placeholder="nazwisko" formControlName="surname">
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>imie</mat-label>
-        <input matInput placeholder="imie">
+        <input matInput placeholder="imie" formControlName="name">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>miasto</mat-label>
-        <input matInput placeholder="miaso">
+        <input matInput placeholder="miaso" formControlName="city">
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-label>numer telefonu</mat-label>
-        <input matInput placeholder="numer telefonu">
+        <input matInput placeholder="numer telefonu" formControlName="phoneNumber">
     </mat-form-field>
-    <mat-form-field>
-        <mat-label>mail</mat-label>
-        <input matInput placeholder="mail">
+    <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput placeholder="email" formControlName="email">
     </mat-form-field>
 </form>
-<button [routerLink]="['']">wstecz</button>
+<button [routerLink]="['']">
+  <mat-icon>arrow_back</mat-icon>
+</button>
+
+<button (click)="saveData()" mat-fab matTooltip = "saveData" [disabled] ="formModel.invalid">
+  <mat-icon>save</mat-icon>
+</button>
+
+<pre>
+  {{formModel.invalid | json}} <! invalid przechowuje prawda lub falsz !>
+  {{formModel.status | json}}
+  {{formModel.value| json}}
+</pre>

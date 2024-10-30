@@ -4,6 +4,6 @@ export interface ContactModel{
     firstname: string;
     city: string;
     phoneNumber: string;
-    mail: string;
+    email: string;
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-contact',
@@ -9,7 +9,7 @@ import { FormBuilder } from '@angular/forms';
 export class AddContactComponent {
   formModel: any;
   constructor(
-    
+
     private fb: FormBuilder
 
   ){}
@@ -18,8 +18,19 @@ export class AddContactComponent {
     this.createFormModel();
   }
   createFormModel(){
+    const stringPattern: string | RegExp = '^[A-ż]{2,30}$';
+
     this.formModel = this.fb.group({
+    surname: ['', [Validators.required,Validators.pattern(stringPattern)]],
+    name: ['',Validators.required,Validators.pattern(stringPattern)],
+    city: ['',Validators.required,Validators.pattern(stringPattern)],
+    phoneNumber: [''],
+    email: ['']
 
     });
+  }
+  saveData() {
+    console.log(this.formModel.value);
+    this.formModel.reset(); // Reset form after save
   }
 }
