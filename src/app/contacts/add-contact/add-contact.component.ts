@@ -52,6 +52,10 @@ export class AddContactComponent {
   saveData() {
     console.log(this.formModel.value);
     this.formModel.reset(); // Reset form after save
+<<<<<<< HEAD
 >>>>>>> 81d94246c15a617603ac1adcb767a48d95647e40
+=======
+    // adsa
+>>>>>>> f5f11614e3c2ac7cb0d584ab22b91ab7394ba944
   }
 }
