@@ -32,5 +32,6 @@ export class AddContactComponent {
   saveData() {
     console.log(this.formModel.value);
     this.formModel.reset(); // Reset form after save
+    // adsa
   }
 }
